@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="DBA" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element label="Database Management" sequence="0" value="DBA"/>
+                <element label="Internet" sequence="1" value="Internet"/>
+                <element label="Hardware/OS" sequence="2" value="HW/OS"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
+            <choice>
+                <element label="New database" sequence="0" value="DBA_new"/>
+                <element label="Drop database" sequence="1" value="DBA_drop"/>
+                <element label="New server" sequence="2" value="HW/OS_new"/>
+                <element label="Drop server" sequence="3" value="HW/OS_drop"/>
+                <element label="Start website" sequence="4" value="Internet_start"/>
+                <element label="Other" sequence="5" value="Other"/>
+            </choice>
+        </element>
+        <element label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+    </element>
+</database>
